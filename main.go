@@ -52,10 +52,9 @@ func parseArgument(argv []string) Args {
 	return args
 }
 
-func run(args Args)  {
+func run(args Args) {
 	fmt.Println(args)
 }
-
 
 // Entry point
 func main() {
