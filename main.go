@@ -54,7 +54,13 @@ func parseArgument(argv []string) Args {
 }
 
 func run(args Args) {
-	fmt.Println(args)
+	graph, err := fa2vg(args.TargetFastaPath, args.NodeMaxSize)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	if err = graph.WriteGFA(args.GfaPath); err != nil {
+		log.Fatalln(err)
+	}
 }
 
 // Entry point
